@@ -12,8 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages/index');
 });
+Route::get('/news', 'PostController@index');
+Route::get('/news-detail/{slug}', 'PostController@show');
+
+Route::get('/hotels', 'HotelController@index');
+Route::get('/hotel-detail/{id}', 'HotelController@show');
+
 
 
 Route::group(['prefix' => 'admin'], function () {
